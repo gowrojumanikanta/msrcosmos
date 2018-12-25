@@ -1,0 +1,76 @@
+
+  <div>
+    <!--Table-->
+    <table class="row-cls"   class="table table-striped">
+
+      <!--Table head-->
+      <thead>
+        <tr>
+            <th class="thh">ID</th>
+            <th class="thh">Name</th>
+            <th class="thh">Email</th>
+            <th class="thh">Class</th>
+            <th class="thh">Year</th>
+            <th class="thh">City</th>
+            <th class="thh">Country</th>
+            <th class="thh"></th>
+            <th class="thh"></th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <tr class='row-cls' [ngStyle]=" {'background-color' : data.Status == 'InActive' ? '#e8abab' : 'transparent' }" *ngFor="let data of userList,let i=index"
+          (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+          <td >{{data.StudentId}}</td>
+          <td >{{data.StudentName}}</td>
+          <td >{{data.Email}}</td>
+          <td >{{data.Class}}</td>
+          <td >{{data.Year}}</td>
+          <td >{{data.City}}</td>
+          <td >{{data.Country}}</td>
+          <td><button (click)="EditClick(userList,data)">Edit</button></td>
+          <td><button (click)="delete(data)">Delete</button></td>
+        
+        </tr>
+      </tbody>
+
+      <!--Table body-->
+      
+    </table>
+    <!--Table-->
+    <form [formGroup]="userForm">
+        <div class="form-group">
+
+          
+          <label>Student ID</label>
+          <input type="text" formControlName="StudentId" class="form-control" required>
+
+          <label>Student Name</label>
+          <input type="text" formControlName="StudentName" class="form-control" required>
+
+          <label>Email</label>
+          <input type="text" formControlName="Email" class="form-control" required>
+
+          <label>Class</label>
+          <input type="text" formControlName="Class" class="form-control" required>
+
+          <label>Year</label>
+          <input type="text" formControlName="Year" class="form-control" required>
+
+          <label>City</label>
+          <input type="text" formControlName="City" class="form-control" required>
+
+          <label>Country</label>
+          <input type="text" formControlName="Country" class="form-control" required>
+        </div>
+      
+        <label class="success">{{successMessage}}</label>
+       
+        <button type="submit" [disabled]="isedit" (click)="save(userForm.value)" class="btn btn-success">Save </button>&nbsp;
+        <button type="submit" [disabled]="isupdate" (click)="update(userForm.value)" class="btn btn-success">update </button>&nbsp;
+        <button type="submit" (click)="clear()" class="btn btn-success">Clear</button>
+        <label class="error">{{errorMessage}}</label>
+      </form>
+  </div>
+    
+   

@@ -1,0 +1,50 @@
+
+
+
+<!-- <form [formGroup]="registerForm">
+  <div class="form-group">
+    <label>Fist Name</label>
+    <input type="text" formControlName="FirstName" class="form-control" required>
+    <label>Midele Name</label>
+    <input type="text" formControlName="MiddleName" class="form-control" required>
+    <label>Last Name</label>
+    <input type="text" formControlName="LastName" class="form-control" required>
+    <label>Mobile</label>
+    <input type="text" formControlName="Mobile" class="form-control" required>
+    <label>Email address</label>
+    <input type="email" formControlName="email" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="password" required>
+    <label>Confrim Password</label>
+    <input type="password" class="form-control"  required>
+    <label class="error">{{errorMessage}}</label>
+    <label class="success">{{successMessage}}</label>
+  </div>
+  <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register</button>
+</form> -->
+
+<form [formGroup]="registerForm">
+  
+    <div id="sty" class="form-group">
+     
+      <label>Fist Name</label>
+      <input type="text" formControlName="FirstName" class="form-control" required>
+      <label>Midele Name</label>
+      <input type="text" formControlName="MiddleName" class="form-control" required>
+      <label>Last Name</label>
+      <input type="text" formControlName="LastName" class="form-control" required>
+      <label>Mobile</label>
+      <input type="text" formControlName="Mobile" class="form-control" required>
+      <label>Email address</label>
+      <input type="email" formControlName="email" class="form-control" required>  
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" required>
+      <label>Confrim Password</label>
+      <input type="password" class="form-control" formControlName="password1"  required>
+      <label class="error">{{errorMessage}}</label>
+      <label class="success">{{successMessage}}</label><br>
+      <button  type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-success">Register</button>
+    </div>
+  </form>

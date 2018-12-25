@@ -1,0 +1,21 @@
+#sty {
+  min-width: 350px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: 2px; 
+  text-align: left !important; 
+  
+  
+}
+
+.btn{
+  margin-left: 37%;
+}
+@media (max-width: 500px) {
+  #sty {
+    min-width: 90%;
+  }
+}

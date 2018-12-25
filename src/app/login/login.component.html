@@ -1,0 +1,27 @@
+
+  <div class="container">
+      <form [formGroup]="loginForm" class="myForm" method="post"> 
+        <h3 style="margin-left: 39%;color:green">Login</h3>
+        <div class="form-group">
+          <label for="email"> <b>Email</b></label>
+          <input class="form-control input-lg" type="email" formControlName="email" name="email" id="email" placeholder="email" />
+        </div>
+        <div class="form-group">
+          <label for="password"><b>Password</b></label>
+          <input class="form-control input-lg" type="password" formControlName="password" name="password" placeholder="password" />  <br>  
+          <label class="error">{{errorMessage}}</label>
+          <label class="success">{{successMessage}}</label><br>
+          <div class="row">
+              <div style="margin-left:20px" class="column">
+                <button type="button" class="btn btn-success" (click)="tryLogin(loginForm.value)" >Log In</button>
+              </div>
+              <div style="margin-left: 40px;" class="column">
+                <p>Don't hvae an account?</p>
+              </div>
+              <div style="color: #28a745;margin-left: 5px;" class="column">
+                 <label  (click)="navigate()" aria-hidden="true"><b>Register</b></label>    
+              </div>         
+          </div>            
+        </div>
+      </form>
+     </div>
